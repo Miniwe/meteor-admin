@@ -1,13 +1,13 @@
 Package.describe({
-  name: "yogiben:admin",
-  summary: "A complete admin dashboard solution",
-  version: "1.1.2",
-  git: "https://github.com/yogiben/meteor-admin"
+  name: "miniwe:yogiben-admin",
+  summary: "A complete admin dashboard solution. Materialized",
+  version: "1.2.1",
+  git: "https://github.com/miniwe/meteor-admin"
 });
 
 Package.on_use(function(api){
 
-  both = ['client','server']
+  both = ['client','server'];
 
   api.versionsFrom('METEOR@1.0');
 
@@ -27,9 +27,9 @@ Package.on_use(function(api){
     ],
     both);
 
-  api.use(['less','session','jquery','templating'],'client')
+  api.use(['stylus','session','jquery','templating'],'client');
 
-  api.use(['email'],'server')
+  api.use(['email'],'server');
 
   api.add_files([
     'lib/both/AdminDashboard.coffee',
@@ -45,8 +45,10 @@ Package.on_use(function(api){
     'lib/client/html/admin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
-    'lib/client/css/admin-layout.less',
-    'lib/client/css/admin-custom.less',
+    'lib/client/css/admin-layout.styl',
+    'lib/client/css/admin-custom.styl',
+    'lib/client/css/admin-need.styl',
+    'lib/client/css/admin-materialize.styl',
     'lib/client/js/admin_layout.js',
     'lib/client/js/helpers.coffee',
     'lib/client/js/templates.coffee',
@@ -62,6 +64,6 @@ Package.on_use(function(api){
 
 
 
-  api.export('AdminDashboard',both)
+  api.export('AdminDashboard',both);
 
 });

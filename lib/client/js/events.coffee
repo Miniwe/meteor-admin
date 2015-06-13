@@ -1,7 +1,7 @@
 Template.AdminLayout.events
 	'click .btn-delete': (e,t) ->
 		_id = $(e.target).attr('doc')
-		if Session.equals 'admin_collection_name', 'Users' 
+		if Session.equals 'admin_collection_name', 'Users'
 			Session.set 'admin_id', _id
 			Session.set 'admin_doc', Meteor.users.findOne(_id)
 		else
@@ -24,6 +24,11 @@ Template.AdminDashboardUsersEdit.events
 		Meteor.call 'adminRemoveUserToRole', $(e.target).attr('user'), $(e.target).attr('role')
 
 Template.AdminHeader.events
+	'click .btn-sign-out': () ->
+		Meteor.logout ->
+			Router.go('/')
+
+Template.UserMenu.events
 	'click .btn-sign-out': () ->
 		Meteor.logout ->
 			Router.go('/')

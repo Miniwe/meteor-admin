@@ -1,9 +1,11 @@
 <template name="AdminDashboard">
-	{{#each adminWidgets}}
-	{{> UI.dynamic template=template data=data}}
-	{{else}}
-	{{> adminDefaultWidgets}}
-	{{/each}}
+	<div class="row">
+		{{#each adminWidgets}}
+		{{> UI.dynamic template=template data=data}}
+		{{else}}
+		{{> adminDefaultWidgets}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="AdminDashboardNew">
@@ -70,7 +72,7 @@
 	<button type="submit" class="btn btn-primary">Add User</button>
 
 	{{/autoForm}}
-	
+
 </template>
 
 <template name="AdminDashboardUsersEdit">
@@ -79,7 +81,7 @@
 	{{> quickForm id="adminUpdateUser" buttonContent="Update" buttonClasses="btn btn-primary btn-sm" collection=adminGetUsers schema=adminGetUserSchema doc=admin_current_doc omitFields="roles,services"}}
 	<hr/>
 	{{/if}}
-	
+
 	<h4>User Roles</h4>
 	{{#each roles}}
 	<button class="btn btn-primary btn-xs btn-remove-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>

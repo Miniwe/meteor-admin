@@ -18,15 +18,22 @@ Template.AdminDashboardView.rendered = ->
 	filter = @$('.dataTables_filter')
 	length = @$('.dataTables_length')
 
+
+
+
 	filter.html '
-		<div class="input-group">
-			<input type="search" class="form-control input-sm" placeholder="Search"></input>
-			<div class="input-group-btn">
-				<button class="btn btn-sm btn-default">
-					<i class="fa fa-search"></i>
-				</button>
-			</div>
-		</div>
+	 <nav>
+	    <div class="nav-wrapper">
+	      <form>
+	        <div class="input-field">
+	          <input id="search" type="search" required>
+	          <label for="search"><i class="mdi-action-search"></i></label>
+	          <i class="mdi-navigation-close"></i>
+	        </div>
+	      </form>
+	    </div>
+	  </nav>
+
 	'
 
 	length.html '

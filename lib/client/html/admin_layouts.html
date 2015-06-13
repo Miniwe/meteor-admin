@@ -1,5 +1,65 @@
 <template name="AdminLayout">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	{{#if AdminConfig}}
+ 		{{#if isInRole 'admin'}}
+		<div class="admin-layout">
+ 			<header class="navbar-fixed">
+ 				{{> Navigation}}
+ 			</header>
+			<main>
+			  <div class="container">
+			    <div class="section">
+			    	{{> yield}}
+			    </div>
+		    </div>
+			</main>
+			{{> NavigationSidebar}}
+			{{> Footer}}
+		</div>
+		{{/if}}
+	{{/if}}
+
+</template>
+
+<template name="Footer">
+			<footer class="page-footer lightPrimaryColor primaryTextColor">
+				<div class="container">
+					<div class="row">
+					  <div class="col l6 s12">
+					    <h5>Material Design Meteor Admin</h5>
+					    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+					  </div>
+					  <div class="col l3 s12">
+					    <h5 class="white-text">Repeat nav links</h5>
+					    <ul>
+					      <li><a class="white-text" href="#!">Link 1</a></li>
+					      <li><a class="white-text" href="#!">Link 2</a></li>
+					      <li><a class="white-text" href="#!">Link 3</a></li>
+					      <li><a class="white-text" href="#!">Link 4</a></li>
+					    </ul>
+					  </div>
+					  <div class="col l3 s12">
+					    <h5 class="white-text">More links</h5>
+					    <ul>
+					      <li><a class="white-text" href="#!">Link 1</a></li>
+					      <li><a class="white-text" href="#!">Link 2</a></li>
+					      <li><a class="white-text" href="#!">Link 3</a></li>
+					      <li><a class="white-text" href="#!">Link 4</a></li>
+					    </ul>
+					  </div>
+					</div>
+				</div>
+<div class="footer-copyright">
+      <div class="container">
+      Designed by <a class="orange-text text-lighten-3" href="mailto:miniwe@mail.ru">Messir</a>
+      </div>
+    </div>
+			</footer>
+</template>
+
+<template name="AdminLayout_base">
 {{#if AdminConfig}}
  {{#if isInRole 'admin'}}
 	<div class="admin-layout">
@@ -19,7 +79,7 @@
 								{{#if $.Session.get 'admin_collection'}}
 								<li><a href="/admin/{{admin_collection}}/">{{adminCollectionLabel admin_collection_name}}</a></li>
 								{{/if}}
-								
+
 								{{#if $.Session.equals 'admin_collection_page' 'new'}}
 								<li><a href="/admin/{{admin_collection}}/new">New</a></li>
 								{{/if}}
@@ -28,7 +88,7 @@
 								<li><a href="/admin/{{admin_collection}}/edit">Edit</a></li>
 								{{/if}}
 
-								
+
 							</ol>
 							{{#if $.Session.get 'admin_collection_name'}}
 							<a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" class="new-document"><i class="fa fa-plus"></i></a>
@@ -95,7 +155,7 @@
 		<br/>
 			adminEmails: ['	ben@code2create.com'],
 		<br/>
-			collections: 
+			collections:
 		<br/>
 				{
 		<br/>
