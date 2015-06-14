@@ -1,5 +1,5 @@
 Package.describe({
-  name: "miniwe:yogiben-admin",
+  name: "miniwe-yogiben-admin",
   summary: "A complete admin dashboard solution. Materialized",
   version: "1.2.1",
   git: "https://github.com/miniwe/meteor-admin"
