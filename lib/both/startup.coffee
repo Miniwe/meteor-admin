@@ -1,21 +1,22 @@
 @AdminTables = {}
 
-adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
+# adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
+adminTablesDom = 'lfrtip'
 
 adminEditButton = {
 	data: '_id'
-	title: 'Edit'
+	title: '&nbsp;'
 	createdCell: (node, cellData, rowData) ->
 		$(node).html(Blaze.toHTMLWithData Template.adminEditBtn, {_id: cellData}, node)
-	width: '40px'
+	# width: '40px'
 	orderable: false
 }
 adminDelButton = {
 	data: '_id'
-	title: 'Delete'
+	title: '&nbsp;'
 	createdCell: (node, cellData, rowData) ->
 		$(node).html(Blaze.toHTMLWithData Template.adminDeleteBtn, {_id: cellData}, node)
-	width: '40px'
+	# width: '40px'
 	orderable: false
 }
 

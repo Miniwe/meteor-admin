@@ -1,156 +1,111 @@
 <template name="AdminLayout">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	{{#if AdminConfig}}
- 		{{#if isInRole 'admin'}}
-		<div class="admin-layout">
- 			<header class="navbar-fixed">
- 				{{> Navigation}}
- 			</header>
-			<main>
-			  <div class="container">
-			    <div class="section">
-			    	{{> yield}}
-			    </div>
-		    </div>
-			</main>
-			{{> NavigationSidebar}}
-			{{> Footer}}
-		</div>
-		{{/if}}
-	{{/if}}
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{#if AdminConfig}}
+    {{#if isInRole 'admin'}}
+      <div class="admin-layout">
+        <header class="navbar-fixed">
+          {{> Navigation}}
+        </header>
+        <main>
+          <div class="row">
+            <div class="col s0 m1 l2">&nbsp;</div>
+            <div class="col s12 m10 l8">
+              <section class="main">
+                {{> yield}}
+              </section>
+            </div>
+            <div class="col s0 m1 l2">&nbsp;</div>
+          </div>
+        </main>
+        {{> NavigationSidebar}} {{> Footer}}
+      </div>
+    {{else}}
+      {{> NotAdmin}}
+    {{/if}}
+    {{> AdminDeleteModal }}
+  {{else}}
+    {{> NoConfig}}
+  {{/if}}
 </template>
 
 <template name="Footer">
-			<footer class="page-footer lightPrimaryColor primaryTextColor">
-				<div class="container">
-					<div class="row">
-					  <div class="col l6 s12">
-					    <h5>Material Design Meteor Admin</h5>
-					    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+  <footer class="page-footer lightPrimaryColor primaryTextColor">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Material Design Meteor Admin</h5>
+          <p class="">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
-
-					  </div>
-					  <div class="col l3 s12">
-					    <h5 class="white-text">Repeat nav links</h5>
-					    <ul>
-					      <li><a class="white-text" href="#!">Link 1</a></li>
-					      <li><a class="white-text" href="#!">Link 2</a></li>
-					      <li><a class="white-text" href="#!">Link 3</a></li>
-					      <li><a class="white-text" href="#!">Link 4</a></li>
-					    </ul>
-					  </div>
-					  <div class="col l3 s12">
-					    <h5 class="white-text">More links</h5>
-					    <ul>
-					      <li><a class="white-text" href="#!">Link 1</a></li>
-					      <li><a class="white-text" href="#!">Link 2</a></li>
-					      <li><a class="white-text" href="#!">Link 3</a></li>
-					      <li><a class="white-text" href="#!">Link 4</a></li>
-					    </ul>
-					  </div>
-					</div>
-				</div>
-<div class="footer-copyright">
-      <div class="container">
-      Designed by <a class="orange-text text-lighten-3" href="mailto:miniwe@mail.ru">Messir</a>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Repeat nav links</h5>
+          <ul>
+            <li><a href="#!">Link 1</a></li>
+            <li><a href="#!">Link 2</a></li>
+            <li><a href="#!">Link 3</a></li>
+            <li><a href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">More links</h5>
+          <ul>
+            <li><a href="#!">Link 1</a></li>
+            <li><a href="#!">Link 2</a></li>
+            <li><a href="#!">Link 3</a></li>
+            <li><a href="#!">Link 4</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-			</footer>
-</template>
-
-<template name="AdminLayout_base">
-{{#if AdminConfig}}
- {{#if isInRole 'admin'}}
-	<div class="admin-layout">
-		<div class="skin-{{adminGetSkin}}">
-			{{> AdminHeader}}
-			<div class="wrapper row-offcanvas row-offcanvas-left">
-				{{> AdminSidebar }}
-				<aside class="right-side">
-					<section class="content-header">
-						<h1>
-							{{$.Session.get 'admin_title'}}
-							<small>{{$.Session.get 'admin_subtitle'}}</small>
-						</h1>
-						<div class="header-right">
-							<ol class="breadcrumb">
-								<li><a href="/admin/">Dashboard</a></li>
-								{{#if $.Session.get 'admin_collection'}}
-								<li><a href="/admin/{{admin_collection}}/">{{adminCollectionLabel admin_collection_name}}</a></li>
-								{{/if}}
-
-								{{#if $.Session.equals 'admin_collection_page' 'new'}}
-								<li><a href="/admin/{{admin_collection}}/new">New</a></li>
-								{{/if}}
-
-								{{#if $.Session.equals 'admin_collection_page' 'edit'}}
-								<li><a href="/admin/{{admin_collection}}/edit">Edit</a></li>
-								{{/if}}
-
-
-							</ol>
-							{{#if $.Session.get 'admin_collection_name'}}
-							<a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" class="new-document"><i class="fa fa-plus"></i></a>
-							{{/if}}
-						</div>
-					</section>
-					<section class="content">
-						{{> yield }}
-					</section>
-				</aside>
-
-			</div>
-		</div>
-	</div>
-	{{> AdminDeleteModal }}
-	{{else}}
-	{{> NotAdmin}}
-	{{/if}}
-	{{else}}
-	{{> NoConfig}}
-	{{/if}}
+    <div class="footer-copyright">
+      <div class="container">
+        Designed by <a class="orange-text text-lighten-3" href="mailto:miniwe@mail.ru">Messir</a>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <template name="AdminDeleteModal">
-	<div class="modal fade" id="admin-delete-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Confirm delete</h4>
-				</div>
-				<div class="modal-body">
-					<p>Are you sure you want to delete this?</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" id="confirm-delete" class="btn btn-danger">Delete</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+  <div class="modal fade" id="admin-delete-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Confirm delete</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="confirm-delete" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
 </template>
 
 <template name="NotAdmin">
-<div class="container">
-<div class="row">
-	<div class="col-md-4 col-md-offset-4">
-		<p class="alert alert-info" style="margin-top:100px;">
-			You need to be an admin to view this page
-		</p>
-	</div>
-</div>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p class="alert alert-info" style="margin-top:100px;">
+          You need to be an admin to view this page
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="NoConfig">
-	<p class="alert alert-info">
-		You need to define an AdminConfig object to use the admin dashboard.
-		<br/>
-		A basic config to manage the 'Posts' and 'Comments' collection would look like this:
-		<br/>
-		<code>
+  <p class="alert alert-info">
+    You need to define an AdminConfig object to use the admin dashboard.
+    <br/> A basic config to manage the 'Posts' and 'Comments' collection would look like this:
+    <br/>
+    <code>
 		AdminConfig = {
 		<br/>
 			adminEmails: ['	ben@code2create.com'],
@@ -167,5 +122,5 @@
 		<br/>
 		}
 		</code>
-	</p>
+  </p>
 </template>
