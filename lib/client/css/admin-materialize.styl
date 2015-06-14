@@ -3,19 +3,25 @@
 
 $sidebarWidth = 240px
 
-@media only screen and (min-width 601px)
-  .navbar-fixed
-    height 10rem
+.admin-layout
+  main, footer
+    padding-left $sidebarWidth
 
-main, footer
-  padding-left $sidebarWidth
-
-@media only screen and (max-width  992px)
-  header, main, footer
-    padding-left 0
+@media only screen and (max-width 992px)
+  .admin-layout
+    main, footer
+      padding-left 0
+    header
+      &.navbar-fixed
+        min-height 4rem !important
+      nav
+        min-height 4rem !important
+        padding-left 0 !important
 
 .admin-layout
   header
+    &.navbar-fixed
+      min-height 10rem
     nav
       padding-left $sidebarWidth
       box-sizing border-box
@@ -71,6 +77,7 @@ main, footer
     position absolute
     right 1rem
     margin-top -4rem
+    cursor pointer
 
 .admin-actions
   margin-right 2rem

@@ -7,7 +7,7 @@
 </template>
 
 <template name="adminCollectionWidget">
-  <div class="col s6 m4">
+  <div class="col s12 m6 l4">
     <div class="card {{#if class}}{{class}}{{else}}dashboard-card{{/if}}">
     	{{#with adminGetCollection collection}}
     	<a href="/admin/{{this.name}}">
@@ -17,7 +17,7 @@
       </div>
     	<div class="card-subtitle darkPrimaryColor textPrimaryColor">
 				<i class="fa fa-arrow-circle-right"></i>
-				See all {{adminCollectionCount name}}
+				See all: {{adminCollectionCount name}}
     	</div>
     	</a>
 
