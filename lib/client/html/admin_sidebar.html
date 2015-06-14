@@ -8,7 +8,7 @@
       <ul class="collapsible" data-collapsible="accordion">
         <li>
           <div class="collapsible-header">
-            <a href="{{pathFor 'adminDashboard'}}">
+            <a class="waves-effect waves-light" href="{{pathFor 'adminDashboard'}}">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </div>
@@ -16,15 +16,15 @@
         {{#each admin_collections}}
           <li>
             <div class="collapsible-header">
-              <a href="#">
+              <a href="#" class="waves-effect waves-light">
                 <i class="fa fa-{{this.icon}}"></i>
                 <span>{{this.label}}</span>
               </a>
             </div>
             <div class="collapsible-body">
               <ul class="treeview-menu">
-                <li><a href="{{pathFor 'adminDashboardNew' collection=this.name}}"><i class="mdi-content-add"></i> New</a></li>
-                <li><a href="{{pathFor 'adminDashboardView' collection=this.name}}"><i class="mdi-editor-format-list-bulleted"></i> View All</a></li>
+                <li><a class="waves-effect waves-light" href="{{pathFor 'adminDashboardNew' collection=this.name}}"><i class="mdi-content-add"></i> New</a></li>
+                <li><a class="waves-effect waves-light" href="{{pathFor 'adminDashboardView' collection=this.name}}"><i class="mdi-editor-format-list-bulleted"></i> View All</a></li>
                 {{#each admin_collection_items}}
                   <li><a href="{{url}}"><i class="mdi-av-play-arrow"></i> {{title}}</a></li>
                 {{/each}}
@@ -80,7 +80,7 @@
 
 <template name="adminSidebarItem">
   <li>
-    <a href="{{url}}">
+    <a class="waves-effect waves-light" href="{{url}}">
 			{{#if options.icon}}
 			<i class="fa fa-{{options.icon}}"></i>
 			{{/if}}
@@ -92,7 +92,7 @@
 <template name="adminSidebarItemTree">
   <li>
     <div class="collapsible-header">
-      <a href="#">
+      <a class="waves-effect waves-light" href="#">
 				{{#if options.icon}}
 				<i class="fa fa-{{options.icon}}"></i>
 				{{/if}}
@@ -102,7 +102,7 @@
     <div class="collapsible-body">
       <ul class="treeview-menu">
         {{#each options.urls}}
-          <li><a href="{{url}}"><i class="mdi-av-play-arrow"></i>{{title}}</a></li>
+          <li><a class="waves-effect waves-light" href="{{url}}"><i class="mdi-av-play-arrow"></i>{{title}}</a></li>
         {{/each}}
       </ul>
     </div>

@@ -1,7 +1,7 @@
 @AdminTables = {}
 
 # adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
-adminTablesDom = 'lfrtip'
+adminTablesDom = '<"nav"<lfrtip'
 
 adminEditButton = {
 	data: '_id'

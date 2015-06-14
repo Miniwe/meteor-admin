@@ -63,8 +63,12 @@ $sidebarWidth = 240px
           // .transition (transform .3s ease)
   main
     section.main
-      padding 1rem 0
-
+      // padding 1rem 0
+      // background-color #FFF
+      padding 1rem
+      // margin-top -1rem
+      // z-index 999
+      // position relative
 
 .dashboard-card
   .card-image
@@ -103,11 +107,28 @@ $sidebarWidth = 240px
         padding 0
 
 .side-nav
+  &.fixed a, a
+    padding 0
+  .collapsible
+    li
+      transition (background-color .1s ease)
+      a
+        transition (color .1s ease)
+    li:hover
+      background-color $accentColor
+      a
+        color $textPrimaryColor
   .collapsible-header
     line-height 3rem
     margin 0
-  &.fixed a, a
-    padding 0
+  .collapsible-body
+    ul
+      background-color $lightPrimaryColor
+      color $primaryTextColor
+    li
+      a
+        line-height 3rem
+        height auto
   .card
     margin 0
     .card-content

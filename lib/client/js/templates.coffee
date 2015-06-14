@@ -22,17 +22,13 @@ Template.AdminDashboardView.rendered = ->
 
 
 	filter.html '
-	 <nav>
-	    <div class="nav-wrapper">
-	      <form>
-	        <div class="input-field">
-	          <input id="search" type="search" required>
-	          <label for="search"><i class="mdi-action-search"></i></label>
-	          <i class="mdi-navigation-close"></i>
-	        </div>
-	      </form>
-	    </div>
-	  </nav>
+    <form>
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search"><i class="mdi-action-search"></i></label>
+        <i class="mdi-navigation-close"></i>
+      </div>
+    </form>
 
 	'
 
