@@ -1,18 +1,25 @@
 <template name="Navigation">
   <nav class="primaryColor textPrimaryColor" role="navigation">
+
     <div class="nav-wrapper valign-wrapper">
         <a href="#" data-activates="nav-mobile" class="btn-fab button-collapse waves-effect waves-light btn-flat textPrimaryColor"><i class="mdi-navigation-menu"></i></a>
         <div class="page-title">
-            {{#if AdminConfig.name}}
-                {{AdminConfig.name}}
+            {{#if $.Session.get 'admin_collection_name'}}
+                {{$.Session.get 'admin_collection_name'}}
             {{else}}
-                Admin
+                {{#if AdminConfig.name}}
+                    {{AdminConfig.name}}
+                {{else}}
+                    Admin
+                {{/if}}
             {{/if}}
             <small>
-                Subtitle
+                {{#if $.Session.get 'admin_collection_page'}}
+                    {{$.Session.get 'admin_collection_page'}}
+                {{/if}}
             </small>
         </div>
-      <ul class="right admin-actions">
+      <ul class="admin-actions">
         {{!-- <li><a href="#" class="btn-fab waves-effect waves-light btn-flat textPrimaryColor"><i class="mdi-alert-error"></i></a></li> --}}
         <li>
             <a href="{{#if AdminConfig.dashboard.homeUrl}}{{AdminConfig.dashboard.homeUrl}}{{else}}/{{/if}}" title="Site explore" class="btn-fab waves-effect waves-light btn-flat textPrimaryColor"><i class="mdi-action-explore"></i></a>
@@ -33,10 +40,10 @@
 <template name="UserMenu">
   <div class="card secondaryTextColor">
     <div class="card-content ">
-      <div class="card-title secondaryTextColor">UserName
+      <div class="card-title secondaryTextColor">{{currentUser.username}}
       </div>
-      <a href="mailto:user@email.com">User email</a>
-      <p>Any info</p>
+      {{!-- <a href="mailto:user@email.com">{{toLog currentUser}}</a> --}}
+      <p style="display: none;">{{toLog currentUser}}</p>
     </div>
     <div class="card-action">
       <a href="{{pathFor 'adminDashboardUsersEdit' _id=currentUser._id}}">

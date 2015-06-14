@@ -1,13 +1,14 @@
 @import 'nib'
 @import 'palette'
 
+$sidebarWidth = 240px
 
 @media only screen and (min-width 601px)
   .navbar-fixed
     height 10rem
 
-header, main, footer
-  padding-left 240px
+main, footer
+  padding-left $sidebarWidth
 
 @media only screen and (max-width  992px)
   header, main, footer
@@ -16,6 +17,8 @@ header, main, footer
 .admin-layout
   header
     nav
+      padding-left $sidebarWidth
+      box-sizing border-box
       min-height 10rem
       .valign-wrapper
         justify-content space-between
@@ -30,6 +33,7 @@ header, main, footer
           display block
           font-weight 200
           font-size 0.7em
+          text-transform capitalize
 
       .btn-fab
         line-height normal
@@ -87,3 +91,12 @@ header, main, footer
     .card-content
       a
         padding 0
+
+.side-nav
+  .collapsible-header
+    line-height 3rem
+    margin 0
+  &.fixed a, a
+    padding 0
+  .card
+    margin 0
