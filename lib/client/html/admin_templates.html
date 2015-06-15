@@ -139,7 +139,7 @@
 </template>
 
 <template name="adminUsersMailBtn">
-	<a href="mailto:{{adminUserEmail this}}" class="btn-floating waves-effect waves-blue btn-flat"><i class="fa fa-envelope blue-text"></i></a>
+	<a href="mailto:{{adminUserEmail this}}" class="btn btn-floating waves-effect waves-blue btn-flat"><i class="fa fa-envelope blue-text"></i></a>
 </template>
 
 <template name="adminEditBtn">
@@ -149,5 +149,8 @@
 
 <template name="adminDeleteBtn">
 	{{!-- <a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a> --}}
-	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="btn-floating waves-effect waves-red btn-flat"><i class="fa fa-times red-text" doc="{{_id}}"></i> Delete</a>
+
+	{{#afModal classes="btn-floating waves-effect waves-red  btn-flat" collection=admin_collection_name operation="remove" doc=_id}}
+  Delete post
+	{{/afModal}}
 </template>

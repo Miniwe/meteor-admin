@@ -1,7 +1,7 @@
 @AdminTables = {}
 
 # adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
-adminTablesDom = '<"nav"<lfrtip'
+adminTablesDom = '<"row"<"input-field col s9 m9 l9"f><"col s1 m1 l1 card"><"input-field col s2 m2 l2 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
 
 adminEditButton = {
 	data: '_id'
@@ -105,6 +105,10 @@ adminCreateTables = (collections) ->
 			sub: collection.sub
 			columns: columns
 			extraFields: collection.extraFields
+			language:
+			  paginate:
+			    previous: "<"
+			    next: ">"
 			dom: adminTablesDom
 
 adminPublishTables = (collections) ->

@@ -11,18 +11,23 @@
             <div class="col s0 m0 l1">&nbsp;</div>
             <div class="col s12 m12 l10">
               <section class="main">
+{{#afModal classes="btn" collection=Messages operation="insert"}}
+  Add a new post
+{{/afModal}}
+                <hr>
                 {{> yield}}
               </section>
             </div>
             <div class="col s0 m0 l1">&nbsp;</div>
           </div>
         </main>
-        {{> NavigationSidebar}} {{> Footer}}
+        {{> Footer}}
+        {{> NavigationSidebar}}
       </div>
+      {{> AdminDeleteModal }}
     {{else}}
       {{> NotAdmin}}
     {{/if}}
-    {{> AdminDeleteModal }}
   {{else}}
     {{> NoConfig}}
   {{/if}}
@@ -65,7 +70,16 @@
 </template>
 
 <template name="AdminDeleteModal">
-  <div class="modal fade" id="admin-delete-modal">
+  <div id="modalDelete" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
+  {{!-- <div class="modal fade" id="admin-delete-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -84,7 +98,7 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
-  <!-- /.modal -->
+  <!-- /.modal --> --}}
 </template>
 
 <template name="NotAdmin">

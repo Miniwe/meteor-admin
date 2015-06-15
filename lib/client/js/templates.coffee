@@ -18,22 +18,14 @@ Template.AdminDashboardView.rendered = ->
 	filter = @$('.dataTables_filter')
 	length = @$('.dataTables_length')
 
-
-
-
 	filter.html '
-    <form>
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label for="search"><i class="mdi-action-search"></i></label>
-        <i class="mdi-navigation-close"></i>
-      </div>
-    </form>
-
+      <i class="mdi-action-find-in-page prefix"></i>
+      <input id="search" type="search" class="validate">
+      <label for="search">Filter</label>
 	'
 
 	length.html '
-		<select class="form-control input-sm">
+		<select>
 			<option value="10">10</option>
 			<option value="25">25</option>
 			<option value="50">50</option>
@@ -46,6 +38,7 @@ Template.AdminDashboardView.rendered = ->
 
 	length.find('select').on 'change', ->
 		table.page.len(parseInt @value).draw()
+
 
 Template.AdminDashboardView.helpers
 	hasDocuments: ->

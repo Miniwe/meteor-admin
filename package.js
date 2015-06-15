@@ -16,14 +16,17 @@ Package.on_use(function(api){
     'coffeescript',
     'underscore',
     'aldeed:collection2@2.3.3',
-    'aldeed:autoform@4.2.2 || 5.1.2',
+    'aldeed:autoform',
     'aldeed:template-extension@3.4.3',
     'alanning:roles@1.2.13',
     'raix:handlebar-helpers@0.2.4',
     'reywood:publish-composite@1.3.6',
     'momentjs:moment@2.10.3',
     'aldeed:tabular@1.2.0',
-    'meteorhacks:unblock@1.1.0'
+    'meteorhacks:unblock@1.1.0',
+    'gildaspk:autoform-materialize',
+    'gildaspk:autoform-modals-materialize',
+    'gildaspk:autoform-moment-datepicker'
     ],
     both);
 
