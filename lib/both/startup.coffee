@@ -1,22 +1,18 @@
 @AdminTables = {}
 
 # adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
-adminTablesDom = '<"row"<"input-field col s9 m9 l9"f><"col s1 m1 l1 card"><"input-field col s2 m2 l2 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
+adminTablesDom = '<"row"<"input-field col s7 m9 l10"f><"col s1 m1 l1 card"><"input-field col s4 m2 l1 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
 
 adminEditButton = {
-	data: '_id'
+	# data: '_id'
 	title: '&nbsp;'
-	createdCell: (node, cellData, rowData) ->
-		$(node).html(Blaze.toHTMLWithData Template.adminEditBtn, {_id: cellData}, node)
-	# width: '40px'
+	tmpl: () -> if Meteor.isClient && Template.adminEditBtn then Template.adminEditBtn else false
 	orderable: false
 }
 adminDelButton = {
-	data: '_id'
+	# data: '_id'
 	title: '&nbsp;'
-	createdCell: (node, cellData, rowData) ->
-		$(node).html(Blaze.toHTMLWithData Template.adminDeleteBtn, {_id: cellData}, node)
-	# width: '40px'
+	tmpl: () -> if Meteor.isClient && Template.adminDeleteBtn then Template.adminDeleteBtn else false
 	orderable: false
 }
 
@@ -29,6 +25,7 @@ defaultColumns = () -> [
   data: '_id',
   title: 'ID'
 ]
+
 
 AdminTables.Users = new Tabular.Table
 	# Modify selector to allow search by email

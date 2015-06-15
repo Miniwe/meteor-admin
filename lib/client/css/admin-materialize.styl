@@ -17,6 +17,14 @@ $sidebarWidth = 240px
       nav
         min-height 4rem !important
         padding-left 0 !important
+        .page-title
+          padding 0 !important
+          small
+            display none !important
+          small2
+            display inline-block !important
+  .admin-actions
+    margin-right 0rem !important
 
 .admin-layout
   header
@@ -35,12 +43,16 @@ $sidebarWidth = 240px
         display block
         float left
         line-height normal
-        small
+        small, small2
           display block
           font-weight 200
           font-size 0.7em
           text-transform capitalize
           position absolute
+        small2
+          position static
+          font-size 1em
+          display none
 
       .btn-fab
         line-height normal
@@ -69,6 +81,23 @@ $sidebarWidth = 240px
       // margin-top -1rem
       // z-index 999
       // position relative
+
+.card
+  .card-image
+    .fa
+      font-size 13rem
+      position absolute
+      right 2rem
+      bottom -3rem
+      opacity .1
+  .card-title
+    &.large
+      position absolute
+      top 1rem
+      left 1rem
+      padding 0
+      font-size 3rem
+      font-weight 100
 
 .dashboard-card
   .card-image
@@ -138,12 +167,17 @@ $sidebarWidth = 240px
 .show-select
   select
     display block
+  .dataTables_length
+    select
+      width 100%
+
 
 .select-dropdown
   z-index 10
 
 .table-footer
   padding 1rem
+
 .pagination
   .previous, .next
     a

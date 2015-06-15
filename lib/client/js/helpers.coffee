@@ -15,6 +15,9 @@ adminCollections = ->
 		obj = _.extend obj, {name:key}
 		obj = _.defaults obj, {label: key,icon:'plus',color:'blue'}
 
+UI.registerHelper 'concat', ->
+  Array.prototype.slice.call(arguments, 0, -1).join('')
+
 UI.registerHelper 'AdminConfig', ->
 	AdminConfig if typeof AdminConfig != 'undefined'
 
@@ -97,7 +100,7 @@ UI.registerHelper 'adminGetCollection', (collection)->
 UI.registerHelper 'adminWidgets', ->
 	if typeof AdminConfig.dashboard != 'undefined' and typeof AdminConfig.dashboard.widgets != 'undefined'
 		AdminConfig.dashboard.widgets
-		
+
 UI.registerHelper 'adminUserEmail', (user) ->
 	if user && user.emails && user.emails[0] && user.emails[0].address
 		user.emails[0].address

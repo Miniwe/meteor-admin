@@ -138,19 +138,22 @@
 	{{#if adminIsUserInRole this._id 'admin'}}<i class="fa fa-check"></i>{{/if}}
 </template>
 
+<template name="adminEditBtn">
+		{{#afModal class="btn-floating waves-effect waves-blue btn-flat" collection=admin_collection_name operation="update" doc=_id title="Edit"}}
+	  	<i class="fa fa-pencil blue-text" doc="{{_id}}"></i>
+		{{/afModal}}
+</template>
+
 <template name="adminUsersMailBtn">
 	<a href="mailto:{{adminUserEmail this}}" class="btn btn-floating waves-effect waves-blue btn-flat"><i class="fa fa-envelope blue-text"></i></a>
 </template>
 
-<template name="adminEditBtn">
-	{{!-- <a href="{{pathFor 'adminDashboardEdit' _id=_id collection=admin_collection_name}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> --}}
-	<a href="{{pathFor 'adminDashboardEdit' _id=_id collection=admin_collection_name}}" class="btn-floating waves-effect waves-blue btn-flat"><i class="fa fa-pencil blue-text"></i> Edit</a>
-</template>
 
 <template name="adminDeleteBtn">
 	{{!-- <a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a> --}}
 
-	{{#afModal classes="btn-floating waves-effect waves-red  btn-flat" collection=admin_collection_name operation="remove" doc=_id}}
-  Delete post
-	{{/afModal}}
+		{{#afModal class="btn-floating waves-effect waves-red btn-flat" collection=admin_collection_name operation="remove" doc=_id title="Delete"}}
+	  	<i class="fa fa-times red-text" doc="{{_id}}"></i>
+		{{/afModal}}
+
 </template>

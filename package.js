@@ -24,6 +24,7 @@ Package.on_use(function(api){
     'momentjs:moment@2.10.3',
     'aldeed:tabular@1.2.0',
     'meteorhacks:unblock@1.1.0',
+    // 'yogiben:autoform-modals',
     'gildaspk:autoform-materialize',
     'gildaspk:autoform-modals-materialize',
     'gildaspk:autoform-moment-datepicker'

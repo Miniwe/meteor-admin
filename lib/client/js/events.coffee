@@ -8,12 +8,12 @@ Template.AdminLayout.events
 			Session.set 'admin_id', parseID(_id)
 			Session.set 'admin_doc', adminCollectionObject(Session.get('admin_collection_name')).findOne(parseID(_id))
 
-Template.AdminDeleteModal.events
-	'click #confirm-delete': () ->
-		collection = Session.get 'admin_collection_name'
-		_id = Session.get 'admin_id'
-		Meteor.call 'adminRemoveDoc', collection, _id, (e,r)->
-			$('#admin-delete-modal').modal('hide')
+# Template.AdminDeleteModal.events
+# 	'click #confirm-delete': () ->
+# 		collection = Session.get 'admin_collection_name'
+# 		_id = Session.get 'admin_id'
+# 		Meteor.call 'adminRemoveDoc', collection, _id, (e,r)->
+# 			$('#admin-delete-modal').modal('hide')
 
 Template.AdminDashboardUsersEdit.events
 	'click .btn-add-role': (e,t) ->

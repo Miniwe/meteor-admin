@@ -6,6 +6,12 @@
         <div class="page-title">
             {{#if $.Session.get 'admin_collection_name'}}
                 <a href="/admin/{{admin_collection_name}}" class="textPrimaryColor">{{$.Session.get 'admin_collection_name'}}</a>
+                <small2>
+                    {{#if $.Session.get 'admin_collection_page'}}
+                        {{$.Session.get 'admin_collection_page'}}
+                    {{/if}}
+                </small2>
+
             {{else}}
                 {{#if AdminConfig.name}}
                     {{AdminConfig.name}}
@@ -15,7 +21,12 @@
             {{/if}}
             {{#if $.Session.get 'admin_collection_name'}}
                 {{#unless $.Session.equals 'admin_collection_page' 'new'}}
-                    <a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" class="new-document btn-fab btn-flat waves-effect waves-light white-text"><i class="mdi-image-control-point"></i></a>
+                    {{!-- <a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" class="new-document btn-fab btn-flat waves-effect waves-light white-text"><i class="mdi-image-control-point"></i></a> --}}
+
+                    {{#afModal class='btn-fab btn-flat waves-effect waves-light white-text' collection=admin_collection_name operation="insert" title='Add new' }}
+                      <i class="mdi-image-control-point"></i>
+                    {{/afModal}}
+
                 {{/unless}}
             {{/if}}
 
