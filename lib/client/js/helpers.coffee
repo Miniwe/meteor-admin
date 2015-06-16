@@ -8,12 +8,12 @@ adminCollections = ->
 
 	collections.Users =
 		collectionObject: Meteor.users
-		icon: 'user'
+		icon: 'mdi-social-person'
 		label: 'Users'
 
 	_.map collections, (obj, key) ->
 		obj = _.extend obj, {name:key}
-		obj = _.defaults obj, {label: key,icon:'plus',color:'blue'}
+		obj = _.defaults obj, {label: key,icon:'mdi-content-add',color:'blue'}
 
 UI.registerHelper 'concat', ->
   Array.prototype.slice.call(arguments, 0, -1).join('')

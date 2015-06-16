@@ -49,7 +49,7 @@
     {{else}}
       <div class="alert alert-info">
         <p>There are no visible items in this collection.</p>
-        <p><a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" classes="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+        <p><a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" classes="btn btn-primary"><i class="mdi-content-add"></i> Add one</a></p>
       </div>
     {{/if}}
   {{/if}}
@@ -133,22 +133,22 @@
 </template>
 
 <template name="adminUsersIsAdmin">
-  {{#if adminIsUserInRole this._id 'admin'}}<i class="fa fa-check"></i>{{/if}}
+  {{#if adminIsUserInRole this._id 'admin'}}<i class="mdi-navigation-check"></i>{{/if}}
 </template>
 
 <template name="adminEditBtn">
   {{#afModal classes="btn-floating waves-effect waves-blue btn-flat" collection=admin_collection_name operation="update" doc=_id title="Edit" }}
-    <i class="fa fa-pencil blue-text" doc="{{_id}}"></i>
+    <i class="mdi-content-create blue-text" doc="{{_id}}"></i>
   {{/afModal}}
 </template>
 
 <template name="adminUsersMailBtn">
-  <a href="mailto:{{adminUserEmail this}}" classes="btn btn-floating waves-effect waves-blue btn-flat"><i class="fa fa-envelope blue-text"></i></a>
+  <a href="mailto:{{adminUserEmail this}}" classes="btn btn-floating waves-effect waves-blue btn-flat"><i class="mdi-content-mail blue-text"></i></a>
 </template>
 
 <template name="adminDeleteBtn">
   {{#afModal classes="btn-floating waves-effect waves-red btn-flat" collection=admin_collection_name operation="remove" doc=_id title="Delete" }}
-    <i class="fa fa-times red-text" doc="{{_id}}"></i>
+    <i class="mdi-content-clear red-text" doc="{{_id}}"></i>
   {{/afModal}}
 
 </template>

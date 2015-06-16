@@ -12,17 +12,17 @@
     	{{#with adminGetCollection collection}}
     	<a href="/admin/{{this.name}}">
       <div class="card-image primaryColor textPrimaryColor">
-        <i class="fa fa-{{this.icon}}"></i>
+        <i class="card-icon {{this.icon}}"></i>
         <div class="card-title large">{{this.label}}
         </div>
       </div>
     	<div class="card-subtitle darkPrimaryColor textPrimaryColor">
-				<i class="fa fa-arrow-circle-right"></i>
+				<i class="mdi-content-forward"></i>
 				See all: {{adminCollectionCount name}}
     	</div>
     	</a>
 
-		  <a href="{{pathFor 'adminDashboardNew' collection=this.name}}" class="btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor"><i class="fa fa-{{this.icon}}"></i></a>
+		  <a href="{{pathFor 'adminDashboardNew' collection=this.name}}" class="btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor"><i class="{{this.icon}}"></i></a>
       <div class="card-content">
         <p>&nbsp;</p>
       </div>

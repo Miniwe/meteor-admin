@@ -1,5 +1,5 @@
 <template name="NavigationSidebar">
-  <div id="nav-mobile" class="side-nav fixed">
+  <div id="nav-mobile" class="side-nav z-depth-2 fixed">
 
     <section class="sidebar">
       <header>
@@ -9,7 +9,7 @@
         <li>
           <div class="collapsible-header">
             <a class="waves-effect waves-light" href="{{pathFor 'adminDashboard'}}">
-              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              <i class="mdi-action-dashboard"></i> <span>Dashboard</span>
             </a>
           </div>
         </li>
@@ -17,7 +17,7 @@
           <li>
             <div class="collapsible-header">
               <a href="#" class="waves-effect waves-light">
-                <i class="fa fa-{{this.icon}}"></i>
+                <i class="{{this.icon}}"></i>
                 <span>{{this.label}}</span>
               </a>
             </div>
@@ -66,7 +66,7 @@
         <div class="input-group">
           <input type="text" id="search" name="q" class="form-control" placeholder="Search..."/>
           <span class="input-group-btn">
-            <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="mdi-action-search"></i></button>
           </span>
         </div>
       </form>
@@ -82,7 +82,7 @@
   <li>
     <a class="waves-effect waves-light" href="{{url}}">
 			{{#if options.icon}}
-			<i class="fa fa-{{options.icon}}"></i>
+			<i class="{{options.icon}}"></i>
 			{{/if}}
 			<span>{{title}}</span>
 		</a>
@@ -94,7 +94,7 @@
     <div class="collapsible-header">
       <a class="waves-effect waves-light" href="#">
 				{{#if options.icon}}
-				<i class="fa fa-{{options.icon}}"></i>
+				<i class="{{options.icon}}"></i>
 				{{/if}}
 				<span>{{title}}</span>
 			</a>

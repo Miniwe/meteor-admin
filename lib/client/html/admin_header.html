@@ -30,11 +30,11 @@
                 {{/unless}}
             {{/if}}
 
-            <small>
-                {{#if $.Session.get 'admin_collection_page'}}
+            {{#if $.Session.get 'admin_collection_page'}}
+              <small>
                     {{$.Session.get 'admin_collection_page'}}
-                {{/if}}
-            </small>
+              </small>
+            {{/if}}
         </div>
       <ul class="admin-actions">
         {{!-- <li><a href="#" class="btn-fab waves-effect waves-light btn-flat textPrimaryColor"><i class="mdi-alert-error"></i></a></li> --}}
