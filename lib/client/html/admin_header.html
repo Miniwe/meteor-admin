@@ -23,7 +23,7 @@
                 {{#unless $.Session.equals 'admin_collection_page' 'new'}}
                     {{!-- <a href="{{pathFor 'adminDashboardNew' collection=admin_collection_name}}" class="new-document btn-fab btn-flat waves-effect waves-light white-text"><i class="mdi-image-control-point"></i></a> --}}
 
-                    {{#afModal class='btn-fab btn-flat waves-effect waves-light white-text' collection=admin_collection_name operation="insert" title='Add new' }}
+                    {{#afModal classes='btn-fab btn-flat waves-effect waves-light white-text' collection=admin_collection_name operation="insert" title='Add new' }}
                       <i class="mdi-image-control-point"></i>
                     {{/afModal}}
 

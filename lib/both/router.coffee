@@ -21,7 +21,7 @@
 			Meteor.call 'adminCheckAdmin'
 			if typeof AdminConfig?.nonAdminRedirectRoute == 'string'
 				Router.go AdminConfig.nonAdminRedirectRoute
-		
+
 		@next()
 
 

@@ -12,7 +12,7 @@ Package.on_use(function(api){
   api.versionsFrom('METEOR@1.0');
 
   api.use(
-    ['iron:router@1.0.7',
+    ['iron:router@1.0.9',
     'coffeescript',
     'underscore',
     'aldeed:collection2@2.3.3',
@@ -24,9 +24,6 @@ Package.on_use(function(api){
     'momentjs:moment@2.10.3',
     'aldeed:tabular@1.2.0',
     'meteorhacks:unblock@1.1.0'
-    // 'yogiben:autoform-modals',
-    // 'gildaspk:autoform-materialize',
-    // 'gildaspk:autoform-modals-materialize'
     ],
     both);
 
