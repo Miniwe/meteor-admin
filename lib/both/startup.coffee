@@ -1,7 +1,7 @@
 @AdminTables = {}
 
 # adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'
-adminTablesDom = '<"row"<"input-field col s7 m9 l10"f><"col s1 m1 l1 card"><"input-field col s4 m2 l1 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
+adminTablesDom = '<"row"<"input-field col s7 m8 l9"f><"col s1 m1 l1 card"><"input-field col s4 m3 l2 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
 
 adminEditButton = {
 	# data: '_id'
