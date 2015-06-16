@@ -19,9 +19,9 @@ Template.AdminDashboardView.rendered = ->
 	length = @$('.dataTables_length')
 
 	filter.html '
-      <i class="mdi-action-find-in-page prefix"></i>
-      <input id="search" type="search" class="validate">
-      <label for="search">Filter</label>
+    <i class="mdi-action-find-in-page prefix"></i>
+    <input id="search" type="search" class="validate">
+    <label for="search">Filter</label>
 	'
 
 	length.html '

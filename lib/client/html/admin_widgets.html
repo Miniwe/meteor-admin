@@ -1,32 +1,31 @@
 <template name="adminDefaultWidgets">
   {{#each admin_collections}}
     {{#unless $eq showWidget false}}
-      {{> adminCollectionWidget collection=name}}
+      <div class="col s12 m6 l4">
+        {{> adminCollectionWidget collection=name}}
+      </div>
     {{/unless}}
   {{/each}}
 </template>
 
 <template name="adminCollectionWidget">
-  <div class="col s12 m6 l4">
-    <div class="card {{#if class}}{{class}}{{else}}dashboard-card{{/if}}">
-    	{{#with adminGetCollection collection}}
-    	<a href="/admin/{{this.name}}">
-      <div class="card-image primaryColor textPrimaryColor">
-        <i class="card-icon {{this.icon}}"></i>
-        <div class="card-title large">{{this.label}}
+  <div class="card {{#if class}}{{class}}{{else}}dashboard-card{{/if}}">
+    {{#with adminGetCollection collection}}
+      <a href="/admin/{{this.name}}">
+        <div class="card-image primaryColor textPrimaryColor">
+          <i class="card-icon {{this.icon}}"></i>
+          <div class="card-title large">{{this.label}}
+          </div>
         </div>
-      </div>
-    	<div class="card-subtitle darkPrimaryColor textPrimaryColor">
-				<i class="mdi-content-forward"></i>
-				See all: {{adminCollectionCount name}}
-    	</div>
-    	</a>
+        <div class="card-subtitle darkPrimaryColor textPrimaryColor">
+          <i class="mdi-content-forward"></i> See all: {{adminCollectionCount name}}
+        </div>
+      </a>
 
-		  <a href="{{pathFor 'adminDashboardNew' collection=this.name}}" class="btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor"><i class="{{this.icon}}"></i></a>
+      <a href="{{pathFor 'adminDashboardNew' collection=this.name}}" class="btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor"><i class="{{this.icon}}"></i></a>
       <div class="card-content">
         <p>&nbsp;</p>
       </div>
-      {{/with}}
-    </div>
+    {{/with}}
   </div>
 </template>

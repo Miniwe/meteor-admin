@@ -45,16 +45,13 @@ Package.on_use(function(api){
     'lib/client/html/admin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
-    'lib/client/css/admin-layout.styl',
-    'lib/client/css/admin-custom.styl',
-    'lib/client/css/admin-need.styl',
     'lib/client/css/admin-materialize.styl',
-    'lib/client/js/admin_layout.js',
+    'lib/client/js/admin_layout.coffee',
     'lib/client/js/helpers.coffee',
     'lib/client/js/templates.coffee',
     'lib/client/js/events.coffee',
-    'lib/client/js/slim_scroll.js',
     'lib/client/js/autoForm.coffee',
+    'lib/client/js/slim_scroll.js'
     ], 'client');
 
   api.add_files([
