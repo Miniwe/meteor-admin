@@ -1,8 +1,8 @@
-Template.NavigationSidebar.rendered = ->
+Template.AdminNavigationSidebar.rendered = ->
   $('.collapsible').collapsible accordion: true
   return
 
-Template.Navigation.rendered = ->
+Template.AdminNavigation.rendered = ->
   # @todo not used, use in future
   $('.button-collapse').sideNav()
   $('.dropdown-button').dropdown

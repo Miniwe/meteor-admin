@@ -44,7 +44,7 @@ Template.AdminDashboardView.helpers
 	hasDocuments: ->
 		AdminCollectionsCount.findOne({collection: Session.get 'admin_collection_name'})?.count > 0
 
-Template.UserMenu.helpers
+Template.AdminUserMenu.helpers
 	toLog: (value) ->
 		# console.log 'toLog', value
 		JSON.stringify value

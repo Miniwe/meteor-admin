@@ -1,11 +1,7 @@
 @import 'nib'
 @import 'palette'
 
-$sidebarWidth = 240px
-
-.admin-layout
-  main, footer
-    padding-left $sidebarWidth
+$adminSidebarWidth = 240px
 
 @media only screen and (max-width 992px)
   .admin-layout
@@ -30,11 +26,15 @@ $sidebarWidth = 240px
     margin-right 0rem !important
 
 .admin-layout
+  main, footer
+    padding-left $adminSidebarWidth
+
+
   header
     &.navbar-fixed
       min-height 10rem
     nav
-      padding-left $sidebarWidth
+      padding-left $adminSidebarWidth
       box-sizing border-box
       min-height 10rem
       .valign-wrapper
@@ -85,111 +85,111 @@ $sidebarWidth = 240px
       // z-index 999
       // position relative
 
-.card
-  .card-image
-    .card-icon
-      font-size 13rem
-      position absolute
-      right 0
-      bottom -6rem
-      opacity .1
-  .card-title
-    &.large
-      position absolute
-      top 1rem
-      left 1rem
-      padding 0
-      font-size 3rem
-      font-weight 100
-
-.dashboard-card
-  .card-image
-    min-height 10rem
-    overflow hidden
-
-  .card-subtitle
-    padding 0.3rem 1.5rem
-    font-weight 100
-    font-size 1rem
-
-  .btn-action
-    position absolute
-    right 1rem
-    margin-top -4rem
-    cursor pointer
-
-.admin-actions
-  margin-right 2rem
-  li
-    // line-height 8.4rem
-    padding-left .6rem
-    &:hover, &.active
-      background-color rgba(0, 0, 0, 0)
-    a
-      position static
-      display inline-block !important
-      float none
-
-.user-dropdown
-  padding 0
   .card
-    margin 0
-    .card-content
-      a
+    .card-image
+      .card-icon
+        font-size 13rem
+        position absolute
+        right 0
+        bottom -6rem
+        opacity .1
+    .card-title
+      &.large
+        position absolute
+        top 1rem
+        left 1rem
         padding 0
+        font-size 3rem
+        font-weight 100
 
-.side-nav
-  &.fixed a, a
+  .dashboard-card
+    .card-image
+      min-height 10rem
+      overflow hidden
+
+    .card-subtitle
+      padding 0.3rem 1.5rem
+      font-weight 100
+      font-size 1rem
+
+    .btn-action
+      position absolute
+      right 1rem
+      margin-top -4rem
+      cursor pointer
+
+  .admin-actions
+    margin-right 2rem
+    li
+      // line-height 8.4rem
+      padding-left .6rem
+      &:hover, &.active
+        background-color rgba(0, 0, 0, 0)
+      a
+        position static
+        display inline-block !important
+        float none
+
+  .user-dropdown
     padding 0
-  .collapsible
-    li
-      transition (background-color .1s ease)
-      a
-        transition (color .1s ease)
-    li:hover
-      background-color $accentColor
-      a
-        color $textPrimaryColor
-  .collapsible-header
-    line-height 3rem
-    margin 0
-  .collapsible-body
-    ul
-      background-color $lightPrimaryColor
-      color $primaryTextColor
-    li
-      a
-        line-height 3rem
-        height auto
-  .card
-    margin 0
-    .card-content
-      padding-top 0.2rem
-      padding-bottom 0.2rem
+    .card
+      margin 0
+      .card-content
+        a
+          padding 0
 
-.show-select
-  select
-    display block
-  .dataTables_length
+  .side-nav
+    &.fixed a, a
+      padding 0
+    .collapsible
+      li
+        transition (background-color .1s ease)
+        a
+          transition (color .1s ease)
+      li:hover
+        background-color $accentColor
+        a
+          color $textPrimaryColor
+    .collapsible-header
+      line-height 3rem
+      margin 0
+    .collapsible-body
+      ul
+        background-color $lightPrimaryColor
+        color $primaryTextColor
+      li
+        a
+          line-height 3rem
+          height auto
+    .card
+      margin 0
+      .card-content
+        padding-top 0.2rem
+        padding-bottom 0.2rem
+
+  .show-select
     select
-      width 100%
+      display block
+    .dataTables_length
+      select
+        width 100%
 
 
-.select-dropdown
-  z-index 10
+  .select-dropdown
+    z-index 10
 
-.table-footer
-  padding 1rem
+  .table-footer
+    padding 1rem
 
-.pagination
-  .previous, .next
-    a
-      color #fff
-  .previous
-    a:before
-      color $textPrimaryColor
-      content: "<"
-  .next
-    a:after
-      color $textPrimaryColor
-      content: ">"
+  .pagination
+    .previous, .next
+      a
+        color #fff
+    .previous
+      a:before
+        color $textPrimaryColor
+        content: "<"
+    .next
+      a:after
+        color $textPrimaryColor
+        content: ">"

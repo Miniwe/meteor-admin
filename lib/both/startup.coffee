@@ -4,22 +4,18 @@
 adminTablesDom = '<"row"<"input-field col s7 m8 l9"f><"col s1 m1 l1 card"><"input-field col s4 m3 l2 show-select"l>>t<"row table-footer"<"col s5 m4 l3"ir><"col s7 m8 l9"p>>'
 
 adminEditButton = {
-	# data: '_id'
 	title: '&nbsp;'
 	tmpl: () -> if Meteor.isClient && Template.adminEditBtn then Template.adminEditBtn else false
 	orderable: false
 }
+
 adminDelButton = {
-	# data: '_id'
 	title: '&nbsp;'
 	tmpl: () -> if Meteor.isClient && Template.adminDeleteBtn then Template.adminDeleteBtn else false
 	orderable: false
 }
 
-adminEditDelButtons = [
-	adminEditButton,
-	adminDelButton
-]
+adminEditDelButtons = [adminEditButton, adminDelButton]
 
 defaultColumns = () -> [
   data: '_id',
@@ -43,7 +39,7 @@ AdminTables.Users = new Tabular.Table
 	columns: _.union [
 		{
 			data: '_id'
-			title: 'Admin'
+			title: 'Admi n'
 			# TODO: use `tmpl`
 			createdCell: (node, cellData, rowData) ->
 				$(node).html(Blaze.toHTMLWithData Template.adminUsersIsAdmin, {_id: cellData}, node)

@@ -16,7 +16,7 @@ Template.AdminDashboardUsersEdit.events
 		console.log 'removing user'
 		Meteor.call 'adminRemoveUserToRole', $(e.target).attr('user'), $(e.target).attr('role')
 
-Template.UserMenu.events
+Template.AdminUserMenu.events
 	'click .btn-sign-out': () ->
 		Meteor.logout ->
 			Router.go('/')

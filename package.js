@@ -45,6 +45,7 @@ Package.on_use(function(api){
     'lib/client/html/admin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
+    'lib/client/css/palette.styl',
     'lib/client/css/admin-materialize.styl',
     'lib/client/js/admin_layout.coffee',
     'lib/client/js/helpers.coffee',

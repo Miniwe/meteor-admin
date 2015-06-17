@@ -4,7 +4,7 @@
     {{#if isInRole 'admin'}}
       <div class="admin-layout">
         <header class="navbar-fixed">
-          {{> Navigation}}
+          {{> AdminNavigation}}
         </header>
         <main>
           <div class="row">
@@ -17,8 +17,8 @@
             <div class="col s0 m0 l1 hide-on-small-only">&nbsp;</div>
           </div>
         </main>
-        {{> Footer}}
-        {{> NavigationSidebar}}
+        {{> AdminFooter}}
+        {{> AdminNavigationSidebar}}
         {{> autoformModals}}
       </div>
       {{!-- {{> AdminDeleteModal }} --}}
@@ -30,7 +30,7 @@
   {{/if}}
 </template>
 
-<template name="Footer">
+<template name="AdminFooter">
   <footer class="page-footer lightPrimaryColor primaryTextColor">
     <div class="container">
       <div class="row">
