@@ -13,10 +13,10 @@
           </small2>
 
         {{else}}
-          {{#if AdminConfig.name}}
-            {{AdminConfig.name}}
+          {{#if $.Session.get 'admin_title'}}
+            {{$.Session.get 'admin_title'}}
           {{else}}
-            .Admin
+            {{AdminConfig.name}}
           {{/if}}
         {{/if}}
         {{#if $.Session.get 'admin_collection_name'}}

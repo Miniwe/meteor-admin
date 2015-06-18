@@ -36,6 +36,18 @@ Router.route "adminDashboard",
 		Session.set 'admin_collection_name', ''
 		Session.set 'admin_collection_page', ''
 
+
+Router.route "adminScheduler",
+	path: "/admin/Scheduler"
+	template: "AdminScheduler"
+	controller: 'AdminController'
+	action: ->
+		@render()
+	onAfterAction: ->
+		Session.set 'admin_title', 'Scheduler'
+		Session.set 'admin_collection_name', ''
+		Session.set 'admin_collection_page', ''
+
 Router.route "adminDashboardUsersNew",
 	path: "/admin/Users/new"
 	template: "AdminDashboardUsersNew"

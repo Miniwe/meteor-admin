@@ -48,3 +48,9 @@ Template.AdminUserMenu.helpers
 	toLog: (value) ->
 		# console.log 'toLog', value
 		JSON.stringify value
+
+
+Template.AdminScheduler.rendered = ->
+  scheduler.init "scheduler_here", new Date()
+  scheduler.meteor TasksCollection
+
