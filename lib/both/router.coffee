@@ -1,4 +1,5 @@
 @AdminController = RouteController.extend
+	title: 'Prophet Admin Layout'
 	layoutTemplate: 'AdminLayout'
 	waitOn: ->
 		[

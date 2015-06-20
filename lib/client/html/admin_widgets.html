@@ -22,7 +22,10 @@
         </div>
       </a>
 
-      <a href="{{pathFor 'adminDashboardNew' collection=this.name}}" class="btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor"><i class="{{this.icon}}"></i></a>
+      {{#afModal classes='btn-floating btn-large waves-effect waves-light btn-action accentColor primaryTextColor' collection=this.name operation="insert" title='Add new' }}
+        <i class="{{this.icon}}"></i>
+      {{/afModal}}
+
       <div class="card-content">
         <p>&nbsp;</p>
       </div>

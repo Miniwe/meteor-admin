@@ -15,6 +15,10 @@ adminCollections = ->
 		obj = _.extend obj, {name:key}
 		obj = _.defaults obj, {label: key,icon:'mdi-content-add',color:'blue'}
 
+
+UI.registerHelper 'makeUniqueID', ->
+  'update-each-' + @_id
+
 UI.registerHelper 'concat', ->
   Array.prototype.slice.call(arguments, 0, -1).join('')
 

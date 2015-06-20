@@ -136,6 +136,12 @@
   {{#if adminIsUserInRole this._id 'admin'}}<i class="mdi-navigation-check"></i>{{/if}}
 </template>
 
+<template name="adminBoolean">
+  {{#autoForm id=makeUniqueID type="update" collection=admin_collection_name doc=this autosave=true}}
+    {{> afFormGroup name='status' defaultValue=true label=0}}
+  {{/autoForm}}
+</template>
+
 <template name="adminEditBtn">
   {{#afModal classes="btn-floating waves-effect waves-blue btn-flat" collection=admin_collection_name operation="update" doc=_id title="Edit" }}
     <i class="mdi-content-create blue-text" doc="{{_id}}"></i>

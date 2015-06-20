@@ -5,17 +5,26 @@ adminTablesDom = '<"row"<"input-field col s7 m8 l9"f><"col s1 m1 l1 card"><"inpu
 
 adminEditButton = {
 	title: '&nbsp;'
-	tmpl: () -> if Meteor.isClient && Template.adminEditBtn then Template.adminEditBtn else false
+	tmpl: -> if Meteor.isClient && Template.adminEditBtn then Template.adminEditBtn else false
 	orderable: false
 }
 
 adminDelButton = {
 	title: '&nbsp;'
-	tmpl: () -> if Meteor.isClient && Template.adminDeleteBtn then Template.adminDeleteBtn else false
+	tmpl: -> if Meteor.isClient && Template.adminDeleteBtn then Template.adminDeleteBtn else false
 	orderable: false
 }
 
-adminEditDelButtons = [adminEditButton, adminDelButton]
+adminBooleanTest = {
+	title: 'Boolean'
+	cellData:
+		fieldName: 'status'
+		defaultValue: true
+	tmpl: -> if Meteor.isClient && Template.adminBoolean then Template.adminBoolean else false
+	orderable: false
+}
+
+adminEditDelButtons = [adminEditButton, adminDelButton, adminBooleanTest]
 
 defaultColumns = () -> [
   data: '_id',
@@ -39,7 +48,7 @@ AdminTables.Users = new Tabular.Table
 	columns: _.union [
 		{
 			data: '_id'
-			title: 'Admi n'
+			title: 'Admin'
 			# TODO: use `tmpl`
 			createdCell: (node, cellData, rowData) ->
 				$(node).html(Blaze.toHTMLWithData Template.adminUsersIsAdmin, {_id: cellData}, node)
@@ -90,6 +99,8 @@ adminCreateTables = (collections) ->
 			columns.push(adminEditButton)
 		if collection.showDelColumn
 			columns.push(adminDelButton)
+
+		columns.push(adminBooleanTest)
 
 		AdminTables[name] = new Tabular.Table
 			name: name
